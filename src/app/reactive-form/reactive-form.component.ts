@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
   userForm!: FormGroup;
-  submitted = false; // To track form submission
 
   constructor(private fb: FormBuilder) {}
 
@@ -20,9 +19,7 @@ export class ReactiveFormComponent implements OnInit {
     });
   }
 
-  onFormSubmit(): void {
-    this.submitted = true; // Mark the form as submitted
-    
+  onFormSubmit(): void {    
     if (this.userForm.valid) {
       // Process the form data here, e.g., send it to a server.
       console.log(this.userForm.value);
